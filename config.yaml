@@ -1,0 +1,126 @@
+# ============================================================================
+#  bash2zsh configuration
+#  Edit this file to customize your zsh setup, then run: bash setup.sh
+# ============================================================================
+
+
+# ── Shell Theme ──────────────────────────────────────────────────────────────
+# Built-in oh-my-zsh themes: robbyrussell, agnoster, apple, af-magic,
+# bira, candy, clean, cloud, dst, fino, gnzh, half-life, jispwoso,
+# kafeitu, maran, refined, sunrise, wedisagree, ys ...
+# Full list: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#
+# Set to "powerlevel10k" to auto-install Powerlevel10k instead.
+
+theme: robbyrussell
+
+
+# ── Editor ───────────────────────────────────────────────────────────────────
+# Your preferred editor. Used for $EDITOR and 'vim' alias (if neovim).
+# Options: nvim, vim, nano, micro, code
+
+editor: nvim
+
+
+# ── Oh My Zsh Plugins ────────────────────────────────────────────────────────
+# Plugins bundled with oh-my-zsh (no extra install needed):
+#   git, command-not-found, colored-man-pages, fzf, extract,
+#   docker, kubectl, npm, pip, sudo, history, z, aws, terraform ...
+# Full list: https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+
+plugins:
+  - git
+  - zsh-syntax-highlighting
+  - zsh-autosuggestions
+  - command-not-found
+  - colored-man-pages
+  - fzf
+  - extract
+
+
+# ── Custom Plugins (installed from git) ──────────────────────────────────────
+# These are cloned into ~/.oh-my-zsh/custom/plugins/ automatically.
+# Format: name = git clone URL
+
+custom_plugins:
+  zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
+  zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
+
+
+# ── CLI Tools ────────────────────────────────────────────────────────────────
+# Tools to install. Set to true/false to enable/disable each one.
+# All enabled tools are installed automatically (or skipped if already present).
+
+tools:
+  fzf: true               # Fuzzy finder (Ctrl+R, Ctrl+T)
+  fd: true                 # Fast 'find' replacement
+  ripgrep: true            # Fast 'grep' replacement (rg)
+  eza: true                # Modern 'ls' with icons and colors
+  zoxide: true             # Smart 'cd' that learns your habits (z)
+  bat: true                # 'cat' with syntax highlighting
+  neovim: true             # Modern vim
+  nvm: true                # Node.js version manager
+  rust: true               # Rust language (rustup + cargo)
+  xclip: true              # Clipboard support (pbcopy/pbpaste on Linux)
+  tree: true               # Directory tree viewer
+  nerd_font: true          # JetBrainsMono Nerd Font (for icons)
+  homebrew: true           # Homebrew package manager (Linux)
+
+
+# ── Aliases ──────────────────────────────────────────────────────────────────
+# Custom shell aliases. These are added to your .zshrc.
+# Tip: The 'aa' command lets you browse all aliases with fzf.
+#
+# Some aliases are auto-generated based on installed tools:
+#   ls  -> eza (if installed)
+#   find -> fd + fzf (if installed)
+#   vim -> nvim (if editor is nvim)
+#   pbcopy/pbpaste -> xclip or wl-copy (auto-detected)
+#
+# Add your own below. These take priority over auto-generated ones.
+
+aliases:
+  gs: "git status"
+  gp: "git push"
+  gl: "git log --oneline -20"
+  gd: "git diff"
+  ga: "git add"
+  gc: "git commit"
+  # ssh: "TERM=xterm-256color ssh"
+  # myserver: "ssh user@10.0.0.1"
+  # devbox: "ssh user@192.168.1.100"
+
+
+# ── Environment Variables ────────────────────────────────────────────────────
+# Exported environment variables added to your .zshrc.
+# Note: PATH is handled automatically for installed tools.
+
+exports:
+  CLAUDE_CODE_MAX_OUTPUT_TOKENS: "64000"
+  # JAVA_HOME: "/usr/lib/jvm/java-17-openjdk-amd64"
+  # ANDROID_HOME: "$HOME/Android/Sdk"
+  # GOPATH: "$HOME/go"
+  # AWS_PROFILE: "default"
+
+
+# ── Extra PATH Entries ───────────────────────────────────────────────────────
+# Additional directories to prepend to $PATH.
+# ~/.local/bin is always included.
+
+extra_paths:
+  # - /usr/local/go/bin
+  # - $HOME/go/bin
+  # - $HOME/.yarn/bin
+
+
+# ── Extra zshrc ──────────────────────────────────────────────────────────────
+# Raw zsh code appended to the end of .zshrc.
+# Use this for anything not covered by the options above.
+# Must be valid zsh syntax.
+
+extra_zshrc: |
+  # Example: auto-detect Java
+  # if [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]; then
+  #     export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+  #     export PATH="$JAVA_HOME/bin:$PATH"
+  # fi
